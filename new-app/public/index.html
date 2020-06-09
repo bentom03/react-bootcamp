@@ -25,10 +25,27 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      .box {
+          height: 200px;
+          width: 200px;
+          background-color: firebrick;
+          border: 1px solid darkred;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- <div>
+      <button id="button">Click me</button>
+        <br />
+        <br />
+        <input type="text" id="input"/>
+        <br />
+        <br />
+        <div class="box" id="box"></div>
+    </div> -->
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +56,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- <script>
+        document.getElementById('button').addEventListener('click', function(event) {
+          console.log(event.target);
+        });
+
+        document.getElementById('input').addEventListener('input', function() {
+          console.log("input is changed");
+        });
+
+        document.getElementById('box').addEventListener('mouseover', function(event) {
+          console.log(event.target.clientWidth, event.target.clientHeight);
+          
+        })
+    </script> -->
   </body>
 </html>

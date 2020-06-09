@@ -1,15 +1,30 @@
 import React from 'react';
-import Card from "./components/Card";
-// import './App.css';
+// import RenderPropsExample from "./components/RenderPropsExample"
+import Favourite from "./components/Favourite"
+import Menu from "./components/Menu"
 
-function App() {
+function App(props) {
   return (
-    <>
-        <Card cardColor="orange" width={300} />
-        <Card cardColor="white" width={300} />
-        <Card width={300} cardColor="green"   />
-    </>
-  );
+    <div>
+      <Menu />
+      <hr />
+      <Favourite /> 
+    </div>
+  )
 }
+
+// Render Props div in App 
+{/* <div style={{margin: "1rem"}}>
+        <RenderPropsExample render={
+            function(obj) {
+              const listItems = obj.map( item => <li key={item.id}> {item.name} </li>)
+              return (
+                <ul>
+                  {listItems}
+                </ul>
+              )    
+            }
+         }/>
+    </div> */}
 
 export default App;
