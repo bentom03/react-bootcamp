@@ -21,12 +21,12 @@ import Toggler from "./Toggler"
 function Favourite(props) {
     return (
         <Toggler render={
-            (isFavourite, toggle) => (
+            (on, toggle) => (
                 <div>
                     <h4 >Click the heart below to favourite</h4>
                     <h1>
                         <span onClick={toggle}>
-                            {isFavourite ? "❤️" : "♡"}
+                            {on ? "❤️" : "♡"}
                         </span>
                     </h1>
                 </div>

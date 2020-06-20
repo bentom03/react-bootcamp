@@ -1,17 +1,61 @@
 import React from 'react';
-// import RenderPropsExample from "./components/RenderPropsExample"
-import Favourite from "./components/Favourite"
-import Menu from "./components/Menu"
+import './App.css';
+import Header from "./components/Header"
+import Button from "./components/Button"
+// import UserContext from './context/userContext';
 
-function App(props) {
+function App() {
   return (
     <div>
-      <Menu />
-      <hr />
-      <Favourite /> 
+      <Header />
+      <Button />
     </div>
   )
 }
+
+export default App;
+
+
+// <UserContext.Consumer>
+//           { username => (
+//             <p className="main">No new notifications, {username}! 🎉</p>  
+//           )}
+//         </UserContext.Consumer>
+
+{/*
+// To practice React.memo
+state = {
+  count: 0
+}
+
+increment = () => {
+  this.setState(prevState => (
+    {count: prevState.count + 1}
+  ))
+}
+
+render() {
+  console.log("[GP] [P] [C] [GC] APP just rendered")
+  return (
+    <div>
+      <button onClick={this.increment}>+1</button>
+      <h2>{this.state.count}</h2>
+      <p>I'm the App component</p>
+      <GrandParent count={this.state.count} />
+      <GrandParent />
+    </div>
+  )
+}
+*/}
+
+{/* <DataFetcher url="https://pokeapi.co/api/v2/pokemon/" >
+{
+  ({data, loading}) => (
+      loading ? <h1>Loading...</h1> :
+      <p>{JSON.stringify(data)}</p>
+    )
+}
+</DataFetcher>  */}
 
 // Render Props div in App 
 {/* <div style={{margin: "1rem"}}>
@@ -27,4 +71,4 @@ function App(props) {
          }/>
     </div> */}
 
-export default App;
+
