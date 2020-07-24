@@ -1,16 +1,17 @@
 import React, {Component} from "react"
-import {ThemeContextConsumer} from "../context/themeContext"
-// import UserContext from "../context/userContext"
+// import {ThemeContextConsumer} from "../context/themeContext"
+import {UserContextConsumer} from "../context/userContext"
 
 function Header(props) {
     return (
-        <ThemeContextConsumer>
-            {theme => (
-                <header className={`${theme}-theme`}>
-                    <h2>{theme === "light" ? "Light" : "Dark"} Theme</h2>
-                </header>
-            )}
-        </ThemeContextConsumer>
+        <header className="dark-theme">
+            <UserContextConsumer>
+                {({username}) => (
+                    <p>Welcome, {username}!</p>
+                    )
+                }
+            </UserContextConsumer>
+        </header>
     )
 }
 

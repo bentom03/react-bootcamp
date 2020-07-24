@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {ThemeContextProvider} from './context/themeContext';
-import UserContext from './context/userContext';
+// import {ThemeContextProvider} from './context/themeContext';
+import {UserContextProvider} from './context/userContext';
 
 
 ReactDOM.render(
-  <ThemeContextProvider>
+  <UserContextProvider>
     <App />
-  </ThemeContextProvider>,
+  </UserContextProvider>,
   document.getElementById('root')
 );
 

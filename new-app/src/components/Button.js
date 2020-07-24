@@ -9,8 +9,8 @@ class Button extends Component {
         // const theme = this.context
         return (
             <ThemeContextConsumer>
-                {theme => (
-                    <button className={`${theme}-theme`}>Switch Theme</button>
+                {context => (
+                    <button className={`${context.theme}-theme`} onClick={context.toggle}>Switch Theme</button>
                 )}
             </ThemeContextConsumer>
             

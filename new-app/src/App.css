@@ -46,6 +46,11 @@ button {
   padding: 10px;
   border: none;
   margin: 10px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.3);
+}
+
+button:hover {
+  box-shadow: none;
 }
 
 header {
@@ -60,4 +65,8 @@ header {
 .light-theme {
   background-color: whitesmoke;
   color: #333333;
+}
+
+.main {
+  padding: 20px;
 }

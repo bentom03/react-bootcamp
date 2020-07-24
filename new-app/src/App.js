@@ -1,26 +1,116 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from "./components/Header"
 import Button from "./components/Button"
-// import UserContext from './context/userContext';
+import {UserContextConsumer} from './context/userContext';
 
 function App() {
+
+  const [inputData, setInputData] = useState({firstName: "", lastName: ""})
+  const [contactsData, setContactsData] = useState([])
+
+  function handleChange(e) {
+    const {name, value} = e.target
+    setInputData(prevInputData => ({ ...prevInputData, [name]: value }))
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    setContactsData( prevContacts => [...prevContacts, inputData])
+  }
+  const contacts = contactsData.map((el, i) => <li key={i}>{el.firstName + ' ' + el.lastName}</li>)
   return (
-    <div>
-      <Header />
-      <Button />
-    </div>
+    <>
+        <form onSubmit={handleSubmit}>
+            <input 
+                placeholder="First Name"
+                name="firstName" 
+                value={inputData.firstName}
+                onChange={handleChange}
+            />
+            <input 
+                placeholder="Last Name"
+                name="lastName" 
+                value={inputData.lastName}
+                onChange={handleChange}
+            />
+            <br />
+            <button>Add contact</button>
+        </form>
+        
+        <ol>
+          {contacts}
+        </ol>
+        
+    </>
   )
 }
+
+// const [count, setCount] = useState(0)
+
+//   const increment = () => {
+//     setCount( prevCount => prevCount + 1)
+//   }
+
+//   const decrement = () => {
+//     setCount( prevCount => prevCount - 1)
+//   }
+
+//   return (
+//     <div>
+//         <h1>{count}</h1>
+//         <button onClick={increment}>Increment</button>
+//         <button onClick={decrement}>Decrement</button>
+//     </div>
+//   )
+
+
+// class App extends React.Component {
+//   state = {
+//     newUsername: ""
+//   }
+
+//   handleChange = (e) => {
+//     const {name, value} = e.target
+//     this.setState( () => {
+//       return {
+//         [name]: value
+//       }
+//     })
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <Header />
+//         <UserContextConsumer>
+//             { ({username, change}) => (
+//               <main>
+//                   <p className="main">No new notifications, {username}! 🎉</p>  
+//                   <input 
+//                     name="newUsername"
+//                     placeholder="New Username"
+//                     value={this.state.newUsername}
+//                     onChange={this.handleChange}
+//                   />
+//                   <button onClick={() => {
+//                       change(this.state.newUsername)
+//                   }}
+//                   >
+//                     Change Username
+//                   </button>
+//               </main>
+//             )}
+//         </UserContextConsumer>
+//       </div>
+//     )
+//   }
+// }
 
 export default App;
 
 
-// <UserContext.Consumer>
-//           { username => (
-//             <p className="main">No new notifications, {username}! 🎉</p>  
-//           )}
-//         </UserContext.Consumer>
+
 
 {/*
 // To practice React.memo
